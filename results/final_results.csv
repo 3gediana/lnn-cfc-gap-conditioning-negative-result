@@ -1,0 +1,78 @@
+stage,dataset,scope,metric,value,unit,source_file,note
+S5-full-protocol,quickdraw,clean,A_acc_meanpool,92.30,pct,full_threearm.csv,pstdev=0.86
+S5-full-protocol,quickdraw,clean,B_acc_meanpool,92.30,pct,full_threearm.csv,pstdev=0.86
+S5-full-protocol,quickdraw,clean,C_acc_meanpool,92.89,pct,full_threearm.csv,pstdev=0.17
+S5-full-protocol,quickdraw,clean,B_minus_A,+0.00,pp,full_threearm.csv,3-seed paired mean
+S5-full-protocol,quickdraw,clean,C_minus_A,+0.59,pp,full_threearm.csv,3-seed paired mean
+S5-full-protocol,quickdraw,uniform30,A_acc_meanpool,63.93,pct,full_threearm.csv,pstdev=2.86
+S5-full-protocol,quickdraw,uniform30,B_acc_meanpool,64.37,pct,full_threearm.csv,pstdev=3.76
+S5-full-protocol,quickdraw,uniform30,C_acc_meanpool,86.10,pct,full_threearm.csv,pstdev=0.80
+S5-full-protocol,quickdraw,uniform30,B_minus_A,+0.44,pp,full_threearm.csv,3-seed paired mean
+S5-full-protocol,quickdraw,uniform30,C_minus_A,+22.17,pp,full_threearm.csv,3-seed paired mean
+S5-full-protocol,quickdraw,block5-30,A_acc_meanpool,71.03,pct,full_threearm.csv,pstdev=4.10
+S5-full-protocol,quickdraw,block5-30,B_acc_meanpool,69.81,pct,full_threearm.csv,pstdev=4.69
+S5-full-protocol,quickdraw,block5-30,C_acc_meanpool,88.52,pct,full_threearm.csv,pstdev=0.66
+S5-full-protocol,quickdraw,block5-30,B_minus_A,-1.22,pp,full_threearm.csv,3-seed paired mean
+S5-full-protocol,quickdraw,block5-30,C_minus_A,+17.49,pp,full_threearm.csv,3-seed paired mean
+S5-full-protocol,quickdraw,block15-30,A_acc_meanpool,72.83,pct,full_threearm.csv,pstdev=2.80
+S5-full-protocol,quickdraw,block15-30,B_acc_meanpool,72.03,pct,full_threearm.csv,pstdev=3.22
+S5-full-protocol,quickdraw,block15-30,C_acc_meanpool,83.55,pct,full_threearm.csv,pstdev=1.08
+S5-full-protocol,quickdraw,block15-30,B_minus_A,-0.80,pp,full_threearm.csv,3-seed paired mean
+S5-full-protocol,quickdraw,block15-30,C_minus_A,+10.72,pp,full_threearm.csv,3-seed paired mean
+S10-nmnist-threearm-baseline,nmnist,clean,A_acc_meanpool,98.12,pct,nmnist_threearm.csv,pstdev=0.20
+S10-nmnist-threearm-baseline,nmnist,clean,B_acc_meanpool,98.12,pct,nmnist_threearm.csv,pstdev=0.20
+S10-nmnist-threearm-baseline,nmnist,clean,C_acc_meanpool,98.78,pct,nmnist_threearm.csv,pstdev=0.04
+S10-nmnist-threearm-baseline,nmnist,clean,B_minus_A,+0.00,pp,nmnist_threearm.csv,3-seed paired mean
+S10-nmnist-threearm-baseline,nmnist,clean,C_minus_A,+0.67,pp,nmnist_threearm.csv,3-seed paired mean
+S10-nmnist-threearm-baseline,nmnist,uniform30,A_acc_meanpool,90.06,pct,nmnist_threearm.csv,pstdev=4.26
+S10-nmnist-threearm-baseline,nmnist,uniform30,B_acc_meanpool,90.13,pct,nmnist_threearm.csv,pstdev=3.71
+S10-nmnist-threearm-baseline,nmnist,uniform30,C_acc_meanpool,97.85,pct,nmnist_threearm.csv,pstdev=0.27
+S10-nmnist-threearm-baseline,nmnist,uniform30,B_minus_A,+0.07,pp,nmnist_threearm.csv,3-seed paired mean
+S10-nmnist-threearm-baseline,nmnist,uniform30,C_minus_A,+7.79,pp,nmnist_threearm.csv,3-seed paired mean
+S10-nmnist-threearm-baseline,nmnist,block5-30,A_acc_meanpool,80.99,pct,nmnist_threearm.csv,pstdev=4.76
+S10-nmnist-threearm-baseline,nmnist,block5-30,B_acc_meanpool,81.08,pct,nmnist_threearm.csv,pstdev=4.47
+S10-nmnist-threearm-baseline,nmnist,block5-30,C_acc_meanpool,90.45,pct,nmnist_threearm.csv,pstdev=1.37
+S10-nmnist-threearm-baseline,nmnist,block5-30,B_minus_A,+0.09,pp,nmnist_threearm.csv,3-seed paired mean
+S10-nmnist-threearm-baseline,nmnist,block5-30,C_minus_A,+9.47,pp,nmnist_threearm.csv,3-seed paired mean
+S10-nmnist-threearm-baseline,nmnist,block15-30,A_acc_meanpool,71.34,pct,nmnist_threearm.csv,pstdev=1.83
+S10-nmnist-threearm-baseline,nmnist,block15-30,B_acc_meanpool,71.34,pct,nmnist_threearm.csv,pstdev=1.83
+S10-nmnist-threearm-baseline,nmnist,block15-30,C_acc_meanpool,71.44,pct,nmnist_threearm.csv,pstdev=1.94
+S10-nmnist-threearm-baseline,nmnist,block15-30,B_minus_A,+0.00,pp,nmnist_threearm.csv,3-seed paired mean
+S10-nmnist-threearm-baseline,nmnist,block15-30,C_minus_A,+0.10,pp,nmnist_threearm.csv,3-seed paired mean
+S7-e2-btrain-arm,quickdraw,clean,D_minus_A,+0.24,pp,e2_btrain.csv,3-seed paired mean
+S7-e2-btrain-arm,quickdraw,clean,D_minus_C,-0.34,pp,e2_btrain.csv,3-seed paired mean
+S7-e2-btrain-arm,quickdraw,uniform30,D_minus_A,+20.48,pp,e2_btrain.csv,3-seed paired mean
+S7-e2-btrain-arm,quickdraw,uniform30,D_minus_C,-1.69,pp,e2_btrain.csv,3-seed paired mean
+S7-e2-btrain-arm,quickdraw,block5-30,D_minus_A,+15.31,pp,e2_btrain.csv,3-seed paired mean
+S7-e2-btrain-arm,quickdraw,block5-30,D_minus_C,-2.18,pp,e2_btrain.csv,3-seed paired mean
+S7-e2-btrain-arm,quickdraw,block15-30,D_minus_A,+7.96,pp,e2_btrain.csv,3-seed paired mean
+S7-e2-btrain-arm,quickdraw,block15-30,D_minus_C,-2.75,pp,e2_btrain.csv,3-seed paired mean
+S7-e2-btrain-arm,quickdraw,block5-30,D_acc_meanpool,86.33,pct,e2_btrain.csv,pstdev=2.35
+S7-e2-btrain-arm,quickdraw,block5-30,attribution_ratio_DmA_over_CmA,0.8752,ratio,e2_btrain.csv + full_threearm.csv,训练期通路贡献占比
+S11-quickdraw-lrdecay-retrain,quickdraw,clean,A_acc_meanpool,93.20,pct,quickdraw_lrdecay.csv,pstdev=0.09
+S11-quickdraw-lrdecay-retrain,quickdraw,clean,B_acc_meanpool,93.20,pct,quickdraw_lrdecay.csv,pstdev=0.09
+S11-quickdraw-lrdecay-retrain,quickdraw,clean,B_minus_A,+0.00,pp,quickdraw_lrdecay.csv,3-seed paired mean
+S11-quickdraw-lrdecay-retrain,quickdraw,uniform30,A_acc_meanpool,64.81,pct,quickdraw_lrdecay.csv,pstdev=2.48
+S11-quickdraw-lrdecay-retrain,quickdraw,uniform30,B_acc_meanpool,65.09,pct,quickdraw_lrdecay.csv,pstdev=3.39
+S11-quickdraw-lrdecay-retrain,quickdraw,uniform30,B_minus_A,+0.28,pp,quickdraw_lrdecay.csv,3-seed paired mean
+S11-quickdraw-lrdecay-retrain,quickdraw,block5-30,A_acc_meanpool,73.36,pct,quickdraw_lrdecay.csv,pstdev=2.20
+S11-quickdraw-lrdecay-retrain,quickdraw,block5-30,B_acc_meanpool,71.87,pct,quickdraw_lrdecay.csv,pstdev=3.00
+S11-quickdraw-lrdecay-retrain,quickdraw,block5-30,B_minus_A,-1.49,pp,quickdraw_lrdecay.csv,3-seed paired mean
+S11-quickdraw-lrdecay-retrain,quickdraw,block15-30,A_acc_meanpool,75.47,pct,quickdraw_lrdecay.csv,pstdev=2.15
+S11-quickdraw-lrdecay-retrain,quickdraw,block15-30,B_acc_meanpool,73.93,pct,quickdraw_lrdecay.csv,pstdev=2.28
+S11-quickdraw-lrdecay-retrain,quickdraw,block15-30,B_minus_A,-1.55,pp,quickdraw_lrdecay.csv,3-seed paired mean
+S11-quickdraw-lrdecay-retrain,quickdraw,clean,A_gain_vs_S5_baseline,+0.90,pp,quickdraw_lrdecay.csv + full_threearm.csv,criterion1=inconclusive
+S10-redesign-negative-probes,nmnist,block5-30,C_no_dt_minus_A,+9.58,pp,nm_negative_probes.csv,verdict=training_dominant_supported
+S10-redesign-negative-probes,nmnist,block5-30,dt_net_effect_C_minus_C_no_dt,-0.11,pp,nm_negative_probes.csv,推理期 dt 净效应
+S10-redesign-negative-probes,nmnist,block5-30,dt_star,20,frames,nm_dt_response_spectrum.json,R_max=0.199260; verdict=supported(>=5)
+S10-redesign-negative-probes,nmnist,uniform30,dt_star,20,frames,nm_dt_response_spectrum.json,R_max=0.198682; verdict=supported(>=5)
+S10-redesign-negative-probes,nmnist,clean,dt_star,20,frames,nm_dt_response_spectrum.json,R_max=0.185449; verdict=supported(>=5)
+D7-fidelity,quickdraw S5,clean,A_acc_meanpool,92.30,pct,full_threearm.csv/quickdraw_lrdecay.csv/nmnist_threearm.csv,
+D7-fidelity,quickdraw S5,clean,gap_vs_paper_tableI,-3.47,pp,d7_fidelity_analysis.json,论文 Table I LNN Test
+D7-fidelity,quickdraw S5,clean,gap_vs_paper_tableIII_0pct,-0.39,pp,d7_fidelity_analysis.json,论文 Table III 0% 列
+D7-fidelity,quickdraw after S11,clean,A_acc_meanpool,93.20,pct,full_threearm.csv/quickdraw_lrdecay.csv/nmnist_threearm.csv,
+D7-fidelity,quickdraw after S11,clean,gap_vs_paper_tableI,-2.57,pp,d7_fidelity_analysis.json,论文 Table I LNN Test
+D7-fidelity,quickdraw after S11,clean,gap_vs_paper_tableIII_0pct,+0.51,pp,d7_fidelity_analysis.json,论文 Table III 0% 列
+D7-fidelity,nmnist S10,clean,A_acc_meanpool,98.12,pct,full_threearm.csv/quickdraw_lrdecay.csv/nmnist_threearm.csv,
+D7-fidelity,nmnist S10,clean,gap_vs_paper_tableI,-1.26,pp,d7_fidelity_analysis.json,论文 Table I LNN Test
+D7-fidelity,nmnist S10,clean,gap_vs_paper_tableIII_0pct,-0.59,pp,d7_fidelity_analysis.json,论文 Table III 0% 列

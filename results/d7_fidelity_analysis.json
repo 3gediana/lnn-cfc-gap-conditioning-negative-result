@@ -1,0 +1,64 @@
+{
+  "stage": "S9-fidelity-gap",
+  "at": "2026-10-31",
+  "unit": "continuation (night-production)",
+  "d7_requoted": {
+    "s5_original": {"ref": "Table III QuickDraw ~98.6-98.7 (mis-cited)", "gap_pp": -6.30},
+    "corrected_refs": {
+      "paper_tableI_quickdraw_lnn_test": 0.9577,
+      "paper_tableIII_quickdraw_lnn_0pct": 92.69,
+      "paper_repo_log_quickdraw_ep30_test": 0.9577
+    },
+    "our_a_clean_meanpool_3seed": 92.30,
+    "our_a_clean_std": 0.86,
+    "gap_vs_tableI_pp": -3.47,
+    "gap_vs_tableIII_0pct_pp": -0.39,
+    "phantom_gap_from_citation_error_pp": 2.83
+  },
+  "protocol_diff": {
+    "epochs": {"paper": 30, "ours": 30, "verdict": "match"},
+    "lr_schedule": {"paper": "step decay 1e-3 -> 5e-4 @ep13 -> 2.5e-4 @ep26 (lln_10.log per-epoch LR lines)", "ours": "constant 1e-3, no scheduler (full_protocol.py:145)", "verdict": "deviation"},
+    "classifier_head": {"paper": "meanpool -> MLP(Dropout+ReLU) -> 10 (paper Sec V.C)", "ours": "Linear(256,10) (pilot_threearm.py)", "verdict": "deviation"},
+    "runs_per_config": {"paper": "single run (paper Sec VI.A)", "ours": "3 seeds mean+-std", "verdict": "deviation_mild"},
+    "iters_per_epoch": {"paper": 310, "ours": 332, "verdict": "unverified (script walled; batch unknown)"},
+    "optimizer_wd_batch": {"paper": "unknown (script walled; log silent)", "ours": "AdamW wd0.01 batch128", "verdict": "unknown"}
+  },
+  "attribution_ranking": [
+    {"rank": 1, "cause": "citation error (Table III N-MNIST 0% column read as QuickDraw)", "effect_pp": -2.83, "status": "confirmed", "fix": "requote; no experiment"},
+    {"rank": 2, "cause": "LR schedule deviation (constant vs step decay)", "effect_pp_est": "-1..-3", "status": "confirmed deviation, effect to be measured by S11", "fix": "S11 rerun"},
+    {"rank": 3, "cause": "classifier head dropout missing", "effect_pp": "unknown", "status": "confirmed deviation, effect unknown", "fix": "S11 report; revisit if gap >2pp remains"},
+    {"rank": 4, "cause": "single-run vs 3-seed mean", "effect_pp": "+-0.86", "status": "caveat", "fix": "none (paper gives no seed)"},
+    {"rank": 5, "cause": "310 vs 332 iters/epoch", "effect_pp": "unknown", "status": "unverified", "fix": "none tonight"}
+  ],
+  "stress_fidelity_secondary": {
+    "our_A_uniform30": 63.93,
+    "paper_tableIII_quickdraw_lnn_30pct": 68.80,
+    "gap_pp": -4.87,
+    "note": "gap widens slightly under masking vs clean (-0.39pp vs same table 0% column); does not change arm-comparison conclusions"
+  },
+  "nmnist_reference_check": {
+    "paper_tableI_nmnist_lnn_test": 0.9938,
+    "paper_repo_log_nmnist_ep10_test": 0.9938,
+    "paper_tableIII_nmnist_lnn_0pct": 98.71,
+    "note": "Table I and repo log agree (0.9938); Table III 0% column (98.71) is a paper-internal inconsistency; S10 D7 target stays 0.9938 with 98.71 as secondary"
+  },
+  "s9_prediction_verdict": "falsified",
+  "s9_failure_conditions_triggered": false,
+  "decision": {
+    "rule": "clear protocol deviation + reproduction cost <2h -> create retrain stage",
+    "retrain_cost_estimate_s": 570,
+    "new_stage": "S11-quickdraw-lrdecay-retrain",
+    "release_S10": true,
+    "release_reason": "N-MNIST constants re-evaluated (10ep confirmed by log+Table I; LR/batch unknown -> frozen project constants per S10 pre-registered fallback); QuickDraw deviation quarantined into S11; arm-internal conclusions unaffected"
+  },
+  "evidence_files": [
+    "results/d7_fidelity_analysis.md",
+    "results/full_threearm.md",
+    "experiments/_repo/0.06_result/lnn_10/lln_10.log",
+    "experiments/_repo/lln_nmnist_10.log",
+    "experiments/full_protocol.py",
+    "experiments/pilot_threearm.py"
+  ],
+  "paper_pdf": "G:/research-papers/2605.27467.pdf (arXiv:2605.27467v1)",
+  "tool_wall_note": "experiments/_repo/lln_quickdraw_0.06.py and run_lln_quickdraw.sh unreadable (Chinese deep-path intermittent wall, 3 routes tried, protocol says stop retrying); optimizer/wd/batch/'0.06' meaning = unknown"
+}

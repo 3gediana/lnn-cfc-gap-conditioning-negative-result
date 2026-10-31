@@ -1,0 +1,4 @@
+# Python 依赖（实测版本；换版本必须先跑 clean A≡B 恒等自检，见 REPRODUCE.md §0）
+torch>=2.2          # 实测 2.10.0+cu128（CPU 亦可跑通全部流程，仅更慢）
+ncps==0.0.2         # CfC 单元；本仓库全部数字基于此版本（0.0.7/1.0.x timespans 行为有差异）
+numpy>=1.24         # 实测 2.2.6

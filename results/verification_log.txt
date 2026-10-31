@@ -1,0 +1,356 @@
+# stress_gap_test.py 实跑记录（S6 打包单元 2026-11-01；G:/ai/python11/python.exe，Python 3.11.9，torch 2.10.0+cu128，ncps 0.0.2）
+
+$ python stress_gap_test.py --identity
+
+====================================================================================================
+stress_gap_test — 液态网络抗丢帧：CfC 基准补真实间隙条件化（负结果复现入口）
+输入：D:\hermes-data\research\液态网络抗丢帧没接时间-cfc基准补真实间隙条件化-4a1c4c0a\repo\results\（5 张原始逐行 CSV + 2 个 JSON + expected_verdicts.json 冻结锚点）
+====================================================================================================
+[PASS] file:full_threearm.csv                         full_threearm.csv 存在且行数=108
+        └─ 实测 108 行
+[PASS] file:nmnist_threearm.csv                       nmnist_threearm.csv 存在且行数=108
+        └─ 实测 108 行
+[PASS] file:e2_btrain.csv                             e2_btrain.csv 存在且行数=144
+        └─ 实测 144 行
+[PASS] file:quickdraw_lrdecay.csv                     quickdraw_lrdecay.csv 存在且行数=72
+        └─ 实测 72 行
+[PASS] file:nm_negative_probes.csv                    nm_negative_probes.csv 存在且行数=108
+        └─ 实测 108 行
+[PASS] file:nm_dt_response_spectrum.json              nm_dt_response_spectrum.json 存在
+[PASS] file:d7_fidelity_analysis.json                 d7_fidelity_analysis.json 存在
+[PASS] quickdraw_s5:clean:A                           quickdraw_s5 clean A 臂 meanpool
+        └─ 重算 92.30±0.86 vs 期望 92.30±0.86
+[PASS] quickdraw_s5:clean:A:std                       quickdraw_s5 clean A 臂 pstdev
+        └─ 重算 0.86 vs 期望 0.86
+[PASS] quickdraw_s5:clean:B                           quickdraw_s5 clean B 臂 meanpool
+        └─ 重算 92.30±0.86 vs 期望 92.30±0.86
+[PASS] quickdraw_s5:clean:B:std                       quickdraw_s5 clean B 臂 pstdev
+        └─ 重算 0.86 vs 期望 0.86
+[PASS] quickdraw_s5:clean:C                           quickdraw_s5 clean C 臂 meanpool
+        └─ 重算 92.89±0.17 vs 期望 92.89±0.17
+[PASS] quickdraw_s5:clean:C:std                       quickdraw_s5 clean C 臂 pstdev
+        └─ 重算 0.17 vs 期望 0.17
+[PASS] quickdraw_s5:clean:B_minus_A                   quickdraw_s5 clean B_minus_A（配对差，3 种子 mean）
+        └─ 重算 +0.00pp vs 期望 +0.00pp
+[PASS] quickdraw_s5:clean:C_minus_A                   quickdraw_s5 clean C_minus_A（配对差，3 种子 mean）
+        └─ 重算 +0.59pp vs 期望 +0.59pp
+[PASS] quickdraw_s5:uniform30:A                       quickdraw_s5 uniform30 A 臂 meanpool
+        └─ 重算 63.93±2.86 vs 期望 63.93±2.86
+[PASS] quickdraw_s5:uniform30:A:std                   quickdraw_s5 uniform30 A 臂 pstdev
+        └─ 重算 2.86 vs 期望 2.86
+[PASS] quickdraw_s5:uniform30:B                       quickdraw_s5 uniform30 B 臂 meanpool
+        └─ 重算 64.37±3.76 vs 期望 64.37±3.76
+[PASS] quickdraw_s5:uniform30:B:std                   quickdraw_s5 uniform30 B 臂 pstdev
+        └─ 重算 3.76 vs 期望 3.76
+[PASS] quickdraw_s5:uniform30:C                       quickdraw_s5 uniform30 C 臂 meanpool
+        └─ 重算 86.10±0.80 vs 期望 86.10±0.80
+[PASS] quickdraw_s5:uniform30:C:std                   quickdraw_s5 uniform30 C 臂 pstdev
+        └─ 重算 0.80 vs 期望 0.80
+[PASS] quickdraw_s5:uniform30:B_minus_A               quickdraw_s5 uniform30 B_minus_A（配对差，3 种子 mean）
+        └─ 重算 +0.44pp vs 期望 +0.44pp
+[PASS] quickdraw_s5:uniform30:C_minus_A               quickdraw_s5 uniform30 C_minus_A（配对差，3 种子 mean）
+        └─ 重算 +22.17pp vs 期望 +22.17pp
+[PASS] quickdraw_s5:block5-30:A                       quickdraw_s5 block5-30 A 臂 meanpool
+        └─ 重算 71.03±4.10 vs 期望 71.03±4.10
+[PASS] quickdraw_s5:block5-30:A:std                   quickdraw_s5 block5-30 A 臂 pstdev
+        └─ 重算 4.10 vs 期望 4.10
+[PASS] quickdraw_s5:block5-30:B                       quickdraw_s5 block5-30 B 臂 meanpool
+        └─ 重算 69.81±4.69 vs 期望 69.81±4.69
+[PASS] quickdraw_s5:block5-30:B:std                   quickdraw_s5 block5-30 B 臂 pstdev
+        └─ 重算 4.69 vs 期望 4.69
+[PASS] quickdraw_s5:block5-30:C                       quickdraw_s5 block5-30 C 臂 meanpool
+        └─ 重算 88.52±0.66 vs 期望 88.52±0.66
+[PASS] quickdraw_s5:block5-30:C:std                   quickdraw_s5 block5-30 C 臂 pstdev
+        └─ 重算 0.66 vs 期望 0.66
+[PASS] quickdraw_s5:block5-30:B_minus_A               quickdraw_s5 block5-30 B_minus_A（配对差，3 种子 mean）
+        └─ 重算 -1.22pp vs 期望 -1.22pp
+[PASS] quickdraw_s5:block5-30:C_minus_A               quickdraw_s5 block5-30 C_minus_A（配对差，3 种子 mean）
+        └─ 重算 +17.49pp vs 期望 +17.49pp
+[PASS] quickdraw_s5:block15-30:A                      quickdraw_s5 block15-30 A 臂 meanpool
+        └─ 重算 72.83±2.80 vs 期望 72.83±2.80
+[PASS] quickdraw_s5:block15-30:A:std                  quickdraw_s5 block15-30 A 臂 pstdev
+        └─ 重算 2.80 vs 期望 2.80
+[PASS] quickdraw_s5:block15-30:B                      quickdraw_s5 block15-30 B 臂 meanpool
+        └─ 重算 72.03±3.22 vs 期望 72.03±3.22
+[PASS] quickdraw_s5:block15-30:B:std                  quickdraw_s5 block15-30 B 臂 pstdev
+        └─ 重算 3.22 vs 期望 3.22
+[PASS] quickdraw_s5:block15-30:C                      quickdraw_s5 block15-30 C 臂 meanpool
+        └─ 重算 83.55±1.08 vs 期望 83.55±1.08
+[PASS] quickdraw_s5:block15-30:C:std                  quickdraw_s5 block15-30 C 臂 pstdev
+        └─ 重算 1.08 vs 期望 1.08
+[PASS] quickdraw_s5:block15-30:B_minus_A              quickdraw_s5 block15-30 B_minus_A（配对差，3 种子 mean）
+        └─ 重算 -0.80pp vs 期望 -0.80pp
+[PASS] quickdraw_s5:block15-30:C_minus_A              quickdraw_s5 block15-30 C_minus_A（配对差，3 种子 mean）
+        └─ 重算 +10.72pp vs 期望 +10.72pp
+[PASS] nmnist_s10:clean:A                             nmnist_s10 clean A 臂 meanpool
+        └─ 重算 98.12±0.20 vs 期望 98.12±0.20
+[PASS] nmnist_s10:clean:A:std                         nmnist_s10 clean A 臂 pstdev
+        └─ 重算 0.20 vs 期望 0.20
+[PASS] nmnist_s10:clean:B                             nmnist_s10 clean B 臂 meanpool
+        └─ 重算 98.12±0.20 vs 期望 98.12±0.20
+[PASS] nmnist_s10:clean:B:std                         nmnist_s10 clean B 臂 pstdev
+        └─ 重算 0.20 vs 期望 0.20
+[PASS] nmnist_s10:clean:C                             nmnist_s10 clean C 臂 meanpool
+        └─ 重算 98.78±0.04 vs 期望 98.78±0.04
+[PASS] nmnist_s10:clean:C:std                         nmnist_s10 clean C 臂 pstdev
+        └─ 重算 0.04 vs 期望 0.04
+[PASS] nmnist_s10:clean:B_minus_A                     nmnist_s10 clean B_minus_A（配对差，3 种子 mean）
+        └─ 重算 +0.00pp vs 期望 +0.00pp
+[PASS] nmnist_s10:clean:C_minus_A                     nmnist_s10 clean C_minus_A（配对差，3 种子 mean）
+        └─ 重算 +0.67pp vs 期望 +0.67pp
+[PASS] nmnist_s10:uniform30:A                         nmnist_s10 uniform30 A 臂 meanpool
+        └─ 重算 90.06±4.26 vs 期望 90.06±4.26
+[PASS] nmnist_s10:uniform30:A:std                     nmnist_s10 uniform30 A 臂 pstdev
+        └─ 重算 4.26 vs 期望 4.26
+[PASS] nmnist_s10:uniform30:B                         nmnist_s10 uniform30 B 臂 meanpool
+        └─ 重算 90.13±3.71 vs 期望 90.13±3.71
+[PASS] nmnist_s10:uniform30:B:std                     nmnist_s10 uniform30 B 臂 pstdev
+        └─ 重算 3.71 vs 期望 3.71
+[PASS] nmnist_s10:uniform30:C                         nmnist_s10 uniform30 C 臂 meanpool
+        └─ 重算 97.85±0.27 vs 期望 97.85±0.27
+[PASS] nmnist_s10:uniform30:C:std                     nmnist_s10 uniform30 C 臂 pstdev
+        └─ 重算 0.27 vs 期望 0.27
+[PASS] nmnist_s10:uniform30:B_minus_A                 nmnist_s10 uniform30 B_minus_A（配对差，3 种子 mean）
+        └─ 重算 +0.07pp vs 期望 +0.07pp
+[PASS] nmnist_s10:uniform30:C_minus_A                 nmnist_s10 uniform30 C_minus_A（配对差，3 种子 mean）
+        └─ 重算 +7.79pp vs 期望 +7.79pp
+[PASS] nmnist_s10:block5-30:A                         nmnist_s10 block5-30 A 臂 meanpool
+        └─ 重算 80.99±4.76 vs 期望 80.99±4.76
+[PASS] nmnist_s10:block5-30:A:std                     nmnist_s10 block5-30 A 臂 pstdev
+        └─ 重算 4.76 vs 期望 4.76
+[PASS] nmnist_s10:block5-30:B                         nmnist_s10 block5-30 B 臂 meanpool
+        └─ 重算 81.08±4.47 vs 期望 81.08±4.47
+[PASS] nmnist_s10:block5-30:B:std                     nmnist_s10 block5-30 B 臂 pstdev
+        └─ 重算 4.47 vs 期望 4.47
+[PASS] nmnist_s10:block5-30:C                         nmnist_s10 block5-30 C 臂 meanpool
+        └─ 重算 90.45±1.37 vs 期望 90.45±1.37
+[PASS] nmnist_s10:block5-30:C:std                     nmnist_s10 block5-30 C 臂 pstdev
+        └─ 重算 1.37 vs 期望 1.37
+[PASS] nmnist_s10:block5-30:B_minus_A                 nmnist_s10 block5-30 B_minus_A（配对差，3 种子 mean）
+        └─ 重算 +0.09pp vs 期望 +0.09pp
+[PASS] nmnist_s10:block5-30:C_minus_A                 nmnist_s10 block5-30 C_minus_A（配对差，3 种子 mean）
+        └─ 重算 +9.47pp vs 期望 +9.47pp
+[PASS] nmnist_s10:block15-30:A                        nmnist_s10 block15-30 A 臂 meanpool
+        └─ 重算 71.34±1.83 vs 期望 71.34±1.83
+[PASS] nmnist_s10:block15-30:A:std                    nmnist_s10 block15-30 A 臂 pstdev
+        └─ 重算 1.83 vs 期望 1.83
+[PASS] nmnist_s10:block15-30:B                        nmnist_s10 block15-30 B 臂 meanpool
+        └─ 重算 71.34±1.83 vs 期望 71.34±1.83
+[PASS] nmnist_s10:block15-30:B:std                    nmnist_s10 block15-30 B 臂 pstdev
+        └─ 重算 1.83 vs 期望 1.83
+[PASS] nmnist_s10:block15-30:C                        nmnist_s10 block15-30 C 臂 meanpool
+        └─ 重算 71.44±1.94 vs 期望 71.44±1.94
+[PASS] nmnist_s10:block15-30:C:std                    nmnist_s10 block15-30 C 臂 pstdev
+        └─ 重算 1.94 vs 期望 1.94
+[PASS] nmnist_s10:block15-30:B_minus_A                nmnist_s10 block15-30 B_minus_A（配对差，3 种子 mean）
+        └─ 重算 +0.00pp vs 期望 +0.00pp
+[PASS] nmnist_s10:block15-30:C_minus_A                nmnist_s10 block15-30 C_minus_A（配对差，3 种子 mean）
+        └─ 重算 +0.10pp vs 期望 +0.10pp
+[PASS] quickdraw_e2:clean:A                           quickdraw_e2 clean A 臂 meanpool
+        └─ 重算 92.30±0.86 vs 期望 92.30±0.86
+[PASS] quickdraw_e2:clean:A:std                       quickdraw_e2 clean A 臂 pstdev
+        └─ 重算 0.86 vs 期望 0.86
+[PASS] quickdraw_e2:clean:D                           quickdraw_e2 clean D 臂 meanpool
+        └─ 重算 92.54±1.02 vs 期望 92.54±1.02
+[PASS] quickdraw_e2:clean:D:std                       quickdraw_e2 clean D 臂 pstdev
+        └─ 重算 1.02 vs 期望 1.02
+[PASS] quickdraw_e2:clean:D_minus_A                   quickdraw_e2 clean D_minus_A（配对差，3 种子 mean）
+        └─ 重算 +0.24pp vs 期望 +0.24pp
+[PASS] quickdraw_e2:clean:D_minus_C                   quickdraw_e2 clean D_minus_C（配对差，3 种子 mean）
+        └─ 重算 -0.34pp vs 期望 -0.34pp
+[PASS] quickdraw_e2:block5-30:A                       quickdraw_e2 block5-30 A 臂 meanpool
+        └─ 重算 71.03±4.10 vs 期望 71.03±4.10
+[PASS] quickdraw_e2:block5-30:A:std                   quickdraw_e2 block5-30 A 臂 pstdev
+        └─ 重算 4.10 vs 期望 4.10
+[PASS] quickdraw_e2:block5-30:D                       quickdraw_e2 block5-30 D 臂 meanpool
+        └─ 重算 86.33±2.35 vs 期望 86.33±2.35
+[PASS] quickdraw_e2:block5-30:D:std                   quickdraw_e2 block5-30 D 臂 pstdev
+        └─ 重算 2.35 vs 期望 2.35
+[PASS] quickdraw_e2:block5-30:D_minus_A               quickdraw_e2 block5-30 D_minus_A（配对差，3 种子 mean）
+        └─ 重算 +15.31pp vs 期望 +15.31pp
+[PASS] quickdraw_e2:block5-30:D_minus_C               quickdraw_e2 block5-30 D_minus_C（配对差，3 种子 mean）
+        └─ 重算 -2.18pp vs 期望 -2.18pp
+[PASS] quickdraw_e2:uniform30:D_minus_A               E2 uniform30 D_minus_A
+        └─ 重算 +20.48pp vs 期望 +20.48pp
+[PASS] quickdraw_e2:uniform30:D_minus_C               E2 uniform30 D_minus_C
+        └─ 重算 -1.69pp vs 期望 -1.69pp
+[PASS] quickdraw_e2:block15-30:D_minus_A              E2 block15-30 D_minus_A
+        └─ 重算 +7.96pp vs 期望 +7.96pp
+[PASS] quickdraw_e2:block15-30:D_minus_C              E2 block15-30 D_minus_C
+        └─ 重算 -2.75pp vs 期望 -2.75pp
+[PASS] quickdraw_lrdecay_s11:clean:A                  quickdraw_lrdecay_s11 clean A 臂 meanpool
+        └─ 重算 93.20±0.09 vs 期望 93.20±0.09
+[PASS] quickdraw_lrdecay_s11:clean:A:std              quickdraw_lrdecay_s11 clean A 臂 pstdev
+        └─ 重算 0.09 vs 期望 0.09
+[PASS] quickdraw_lrdecay_s11:clean:B                  quickdraw_lrdecay_s11 clean B 臂 meanpool
+        └─ 重算 93.20±0.09 vs 期望 93.20±0.09
+[PASS] quickdraw_lrdecay_s11:clean:B:std              quickdraw_lrdecay_s11 clean B 臂 pstdev
+        └─ 重算 0.09 vs 期望 0.09
+[PASS] quickdraw_lrdecay_s11:clean:B_minus_A          quickdraw_lrdecay_s11 clean B_minus_A（配对差，3 种子 mean）
+        └─ 重算 +0.00pp vs 期望 +0.00pp
+[PASS] quickdraw_lrdecay_s11:uniform30:A              quickdraw_lrdecay_s11 uniform30 A 臂 meanpool
+        └─ 重算 64.81±2.48 vs 期望 64.81±2.48
+[PASS] quickdraw_lrdecay_s11:uniform30:A:std          quickdraw_lrdecay_s11 uniform30 A 臂 pstdev
+        └─ 重算 2.48 vs 期望 2.48
+[PASS] quickdraw_lrdecay_s11:uniform30:B              quickdraw_lrdecay_s11 uniform30 B 臂 meanpool
+        └─ 重算 65.09±3.39 vs 期望 65.09±3.39
+[PASS] quickdraw_lrdecay_s11:uniform30:B:std          quickdraw_lrdecay_s11 uniform30 B 臂 pstdev
+        └─ 重算 3.39 vs 期望 3.39
+[PASS] quickdraw_lrdecay_s11:uniform30:B_minus_A      quickdraw_lrdecay_s11 uniform30 B_minus_A（配对差，3 种子 mean）
+        └─ 重算 +0.28pp vs 期望 +0.28pp
+[PASS] quickdraw_lrdecay_s11:block5-30:A              quickdraw_lrdecay_s11 block5-30 A 臂 meanpool
+        └─ 重算 73.36±2.20 vs 期望 73.36±2.20
+[PASS] quickdraw_lrdecay_s11:block5-30:A:std          quickdraw_lrdecay_s11 block5-30 A 臂 pstdev
+        └─ 重算 2.20 vs 期望 2.20
+[PASS] quickdraw_lrdecay_s11:block5-30:B              quickdraw_lrdecay_s11 block5-30 B 臂 meanpool
+        └─ 重算 71.87±3.00 vs 期望 71.87±3.00
+[PASS] quickdraw_lrdecay_s11:block5-30:B:std          quickdraw_lrdecay_s11 block5-30 B 臂 pstdev
+        └─ 重算 3.00 vs 期望 3.00
+[PASS] quickdraw_lrdecay_s11:block5-30:B_minus_A      quickdraw_lrdecay_s11 block5-30 B_minus_A（配对差，3 种子 mean）
+        └─ 重算 -1.49pp vs 期望 -1.49pp
+[PASS] quickdraw_lrdecay_s11:block15-30:A             quickdraw_lrdecay_s11 block15-30 A 臂 meanpool
+        └─ 重算 75.47±2.15 vs 期望 75.47±2.15
+[PASS] quickdraw_lrdecay_s11:block15-30:A:std         quickdraw_lrdecay_s11 block15-30 A 臂 pstdev
+        └─ 重算 2.15 vs 期望 2.15
+[PASS] quickdraw_lrdecay_s11:block15-30:B             quickdraw_lrdecay_s11 block15-30 B 臂 meanpool
+        └─ 重算 73.93±2.28 vs 期望 73.93±2.28
+[PASS] quickdraw_lrdecay_s11:block15-30:B:std         quickdraw_lrdecay_s11 block15-30 B 臂 pstdev
+        └─ 重算 2.28 vs 期望 2.28
+[PASS] quickdraw_lrdecay_s11:block15-30:B_minus_A     quickdraw_lrdecay_s11 block15-30 B_minus_A（配对差，3 种子 mean）
+        └─ 重算 -1.55pp vs 期望 -1.55pp
+[PASS] quickdraw_s5:perseed:B-A                       quickdraw_s5 逐种子 B−A（block5-30）
+        └─ 重算 [-1.73, -2.42, 0.5] vs 期望 [-1.73, -2.42, 0.5]
+[PASS] quickdraw_s5:perseed:C-A                       quickdraw_s5 逐种子 C−A（block5-30）
+        └─ 重算 [22.41, 15.06, 14.99] vs 期望 [22.41, 15.06, 14.99]
+[PASS] nmnist_s10:perseed:B-A                         nmnist_s10 逐种子 B−A（block5-30）
+        └─ 重算 [0.53, 0.04, -0.29] vs 期望 [0.53, 0.04, -0.29]
+[PASS] nmnist_s10:perseed:C-A                         nmnist_s10 逐种子 C−A（block5-30）
+        └─ 重算 [16.38, 6.79, 5.23] vs 期望 [16.38, 6.79, 5.23]
+[PASS] quickdraw_e2:perseed:D-A                       quickdraw_e2 逐种子 D−A（block5-30）
+        └─ 重算 [21.85, 9.69, 14.38] vs 期望 [21.85, 9.69, 14.38]
+[PASS] s11:gain_vs_s5                                 S11 A@clean 增益 vs S5 基线（3 种子 mean）
+        └─ 重算 +0.90pp vs 期望 +0.90pp
+[PASS] s11:perseed_gain                               S11 逐种子增益
+        └─ 重算 [1.99, 0.2, 0.52] vs 期望 [1.99, 0.2, 0.52]
+[PASS] H1:quickdraw_s5                                H1 主判据机械输出（quickdraw_s5，block5-30 meanpool，双约定并报）
+        └─ B: 增益-1.22pp(≥2.0?False)；clean 降幅均值+0.00pp(单侧字面≤0.5?True)；逐种子|降幅|=[0.0, 0.0, 0.0](双侧全≤0.5?True)；C: 增益+17.49pp(≥2.0?True)；clean 降幅均值-0.59pp(单侧字面≤0.5?True)；逐种子|降幅|=[1.82, 0.37, 0.31](双侧全≤0.5?False) → verdict=falsified_negative_branch
+[PASS] H1:quickdraw_s5:verdict                        H1 终判与课题判读一致（quickdraw_s5）
+        └─ 机械输出=falsified_negative_branch；课题判读=falsified_negative_branch（QuickDraw H1 结论级证伪：B−A=-1.22pp<1.0pp 且 clean B−A=-0.00pp 不受损）
+[PASS] H1:nmnist_s10                                  H1 主判据机械输出（nmnist_s10，block5-30 meanpool，双约定并报）
+        └─ B: 增益+0.09pp(≥2.0?False)；clean 降幅均值+0.00pp(单侧字面≤0.5?True)；逐种子|降幅|=[0.0, 0.0, 0.0](双侧全≤0.5?True)；C: 增益+9.47pp(≥2.0?True)；clean 降幅均值-0.67pp(单侧字面≤0.5?True)；逐种子|降幅|=[0.95, 0.43, 0.62](双侧全≤0.5?False) → verdict=falsified_negative_branch
+[PASS] H1:nmnist_s10:verdict                          H1 终判与课题判读一致（nmnist_s10）
+        └─ 机械输出=falsified_negative_branch；课题判读=falsified_negative_branch（N-MNIST H1 结论级证伪：B−A=+0.09pp<1.0pp 且 clean B−A=-0.00pp 不受损）
+[PASS] sanity:quickdraw_s5:cleanAB                    quickdraw_s5 clean A≡B（配对行 max|diff|）
+        └─ max|A−B|=0.0000pp < 0.1pp
+[PASS] sanity:quickdraw_s5:z                          quickdraw_s5 A@uniform30 方向核对 z>2.0
+        └─ 重算 z=155.68（A@uniform30=63.93%）vs 期望 z=155.68
+[PASS] sanity:quickdraw_s5:calibers                   quickdraw_s5 恒定类消失伴生判据（三口径分化>5.0pp）
+        └─ 重算 {meanpool:92.30, final:9.73, gapnb:92.30} 分化=82.57pp vs 期望 meanpool 92.30/final 9.73
+[PASS] sanity:quickdraw_s5:maskfrac:uniform30         quickdraw_s5 uniform30 实现掩码率
+        └─ realized=0.3014（名义 0.30）
+[PASS] sanity:quickdraw_s5:maskfrac:block5-30         quickdraw_s5 block5-30 实现掩码率
+        └─ realized=0.3031（名义 0.30）
+[PASS] sanity:quickdraw_s5:cleanmask0                 quickdraw_s5 clean 条件掩码率为 0
+        └─ realized=0.0
+[PASS] sanity:nmnist_s10:cleanAB                      nmnist_s10 clean A≡B（配对行 max|diff|）
+        └─ max|A−B|=0.0000pp < 0.1pp
+[PASS] sanity:nmnist_s10:z                            nmnist_s10 A@uniform30 方向核对 z>2.0
+        └─ 重算 z=266.86（A@uniform30=90.06%）vs 期望 z=266.86
+[PASS] sanity:nmnist_s10:calibers                     nmnist_s10 恒定类消失伴生判据（三口径分化>5.0pp）
+        └─ 重算 {meanpool:98.12, final:53.04, gapnb:98.12} 分化=45.08pp vs 期望 meanpool 98.12/final 53.04
+[PASS] sanity:nmnist_s10:maskfrac:uniform30           nmnist_s10 uniform30 实现掩码率
+        └─ realized=0.2965（名义 0.30）
+[PASS] sanity:nmnist_s10:maskfrac:block5-30           nmnist_s10 block5-30 实现掩码率
+        └─ realized=0.2884（名义 0.30）
+[PASS] sanity:nmnist_s10:cleanmask0                   nmnist_s10 clean 条件掩码率为 0
+        └─ realized=0.0
+[PASS] sanity:quickdraw_lrdecay_s11:cleanAB           quickdraw_lrdecay_s11 clean A≡B（配对行 max|diff|）
+        └─ max|A−B|=0.0000pp < 0.1pp
+[PASS] sanity:quickdraw_lrdecay_s11:z                 quickdraw_lrdecay_s11 A@uniform30 方向核对 z>2.0
+        └─ 重算 z=158.23（A@uniform30=64.81%）vs 期望 z=158.23
+[PASS] sanity:quickdraw_lrdecay_s11:calibers          quickdraw_lrdecay_s11 恒定类消失伴生判据（三口径分化>5.0pp）
+        └─ 重算 {meanpool:93.20, final:10.22, gapnb:93.20} 分化=82.99pp vs 期望 meanpool 93.20/final 10.22
+[PASS] sanity:quickdraw_lrdecay_s11:maskfrac:uniform30 quickdraw_lrdecay_s11 uniform30 实现掩码率
+        └─ realized=0.3014（名义 0.30）
+[PASS] sanity:quickdraw_lrdecay_s11:maskfrac:block5-30 quickdraw_lrdecay_s11 block5-30 实现掩码率
+        └─ realized=0.3031（名义 0.30）
+[PASS] sanity:quickdraw_lrdecay_s11:cleanmask0        quickdraw_lrdecay_s11 clean 条件掩码率为 0
+        └─ realized=0.0
+[PASS] e2:ratio                                       E2 归因比例 D−A/(C−A)（QuickDraw block5-30）
+        └─ 重算 15.31/17.49=0.8752 vs 期望 0.8752
+[PASS] e2:verdict                                     E2 归因机械输出
+        └─ 训练期激活的时间通路贡献 C−A 增益的 87.5%，gap 指示位边际贡献 D−C=-2.18pp → partial_attribution（判读终判：training_dominant）
+[PASS] e2:clean_gate                                  E2 D 臂 clean 门双约定（并报不改判）
+        └─ 逐种子 D−A(clean)=[1.94, -1.92, 0.71]；单侧字面(降幅≤0.5pp)=PASS、双侧实现(|Δ|≤0.5pp 逐种子)=FAIL（seed0 +1.94 超线）→ 两种约定共同结论不变：训练期主导
+[PASS] probes:identity_A                              探针 A_ref vs S10 A 行（口径零漂移）
+        └─ max|diff|=0.000000 < 0.0005
+[PASS] probes:identity_C                              探针 C_dt vs S10 C 行（口径零漂移）
+        └─ max|diff|=0.000000 < 0.0005
+[PASS] probes:C_no_dt_minus_A                         主探针 C_no_dt−A（block5-30，3 种子 mean）
+        └─ 重算 +9.58pp vs 期望 +9.58pp
+[PASS] probes:perseed                                 主探针逐种子 C_no_dt−A
+        └─ 重算 [16.49, 6.85, 5.4] vs 期望 [16.49, 6.85, 5.41]（注：seed2 真值 5.405 跨 rounding 边界（判读单元独立复算 5.40 / MD 表 5.41），容差 0.02pp 覆盖，不影响 mean 判据）
+[PASS] probes:verdict                                 主探针门线机械输出
+        └─ C_no_dt−A=+9.58pp（阈值 ≥5.0pp→训练期主导）→ training_dominant_supported
+[PASS] probes:dt_net                                  推理期 dt 净效应 C_dt−C_no_dt
+        └─ 重算 -0.11pp vs 期望 -0.11pp
+[PASS] probes:clean_switch                            clean 口径切换差（<0.3pp）
+        └─ 重算 0.0000pp vs 期望 0.0000pp
+[PASS] dt:block5-30:Rmax                              dt 谱 block5-30 R_max
+        └─ 重算 0.199260 vs 期望 0.199260
+[PASS] dt:block5-30:dtstar                            dt 谱 block5-30 饱和点 dt*（min dt 使 R≥0.95·R_max）
+        └─ 重算 dt*=20 vs 期望 20
+[PASS] dt:uniform30:Rmax                              dt 谱 uniform30 R_max
+        └─ 重算 0.198682 vs 期望 0.198682
+[PASS] dt:uniform30:dtstar                            dt 谱 uniform30 饱和点 dt*（min dt 使 R≥0.95·R_max）
+        └─ 重算 dt*=20 vs 期望 20
+[PASS] dt:clean:Rmax                                  dt 谱 clean R_max
+        └─ 重算 0.185449 vs 期望 0.185449
+[PASS] dt:clean:dtstar                                dt 谱 clean 饱和点 dt*（min dt 使 R≥0.95·R_max）
+        └─ 重算 dt*=20 vs 期望 20
+[PASS] dt:verdict                                     帧化量化候选机制门线机械输出
+        └─ block5-30 dt*=20 ≥ 5 → supported（CfC 对 bin 级 dt 仍敏感；L=10≈30ms/bin 把 µs 时间量化约 4 个数量级）
+[PASS] d7:quickdraw_s5:tableI                         D7 quickdraw_s5 A@clean vs 论文 Table I
+        └─ 重算 -3.47pp vs 期望 -3.47pp
+[PASS] d7:quickdraw_s5:tableIII0                      D7 quickdraw_s5 A@clean vs 论文 Table III 0% 列
+        └─ 重算 -0.39pp vs 期望 -0.39pp
+[PASS] d7:nmnist_s10:tableI                           D7 nmnist_s10 A@clean vs 论文 Table I
+        └─ 重算 -1.26pp vs 期望 -1.26pp
+[PASS] d7:nmnist_s10:tableIII0                        D7 nmnist_s10 A@clean vs 论文 Table III 0% 列
+        └─ 重算 -0.59pp vs 期望 -0.59pp
+[PASS] d7:quickdraw_after_s11                         D7 QuickDraw（S11 LR decay 后）双锚点缺口
+        └─ 重算 vs TableI -2.57pp / vs TableIII0% +0.51pp vs 期望 -2.57pp / +0.51pp
+[PASS] d7:json_quote                                  d7_fidelity_analysis.json 引用系纠错记账（phantom 2.83pp）
+        └─ JSON: vs TableI -3.47pp / phantom 2.83pp
+[PASS] identity:cleanAB_forward                       clean 前向 A≡B 恒等（随机初始化小模型，口径性质自检）
+        └─ max|out_a−out_b|=0.000e+00 < 1e-4（device=cuda）
+----------------------------------------------------------------------------------------------------
+硬检查 148/148 通过；信息项 12 条（不计入退出码）
+结论：全部头条数字可从原始 CSV 行重算复现，预注册门线机械输出与课题判读终值一致。
+      H1（推理期真实 timespans 条件化提升块状丢帧精度）= 双数据集结论级证伪（负结果）。
+
+$ python code/repo_code_import_smoke.py
+
+[PASS] pilot_threearm: import ok, 17 symbols present
+[PASS] full_protocol: import ok, 7 symbols present
+[PASS] nmnist_loader: import ok, 3 symbols present
+[PASS] nmnist_threearm: import ok, 4 symbols present
+[PASS] e2_btrain: import ok, 1 symbols present
+[PASS] quickdraw_lrdecay: import ok, 1 symbols present
+[PASS] nm_negative_probes: import ok, 1 symbols present
+[PASS] const SEEDS: [0, 1, 2]
+[PASS] const UNITS: 256
+[PASS] const BATCH: 128
+[PASS] const LR: 0.001
+[PASS] const WD: 0.01
+[PASS] const CLIP: 1.0
+[PASS] const DROP_RATE: 0.3
+[PASS] const N_PATTERNS: 3
+[PASS] const BLOCK_LENS: {'block5-30': 5, 'block15-30': 15}
+[PASS] const EPOCHS_FULL: 30
+[PASS] const SPLIT_SEED: 12345
+[PASS] const EVAL_TOTAL: 108
+[PASS] const EPOCHS_NM: 10
+[PASS] const CONDITIONS: ['clean', 'uniform30', 'block5-30', 'block15-30']
+----------------------------------------------------------------------
+RESULT: PASS — 7 模块导入 + 14 项协议常量与课题冻结规格逐位一致

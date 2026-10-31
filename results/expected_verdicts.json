@@ -1,0 +1,107 @@
+{
+  "schema": "expected-verdicts/v1",
+  "frozen_at": "2026-11-01",
+  "frozen_from": "课题 4a1c4c0a 结论级结果表（S5/S7/S10/S10-redesign/S11 各阶段 MD 表，均已经 researcher 判读单元独立复算确认）；本文件是「已判读期望值」锚点，stress_gap_test.py 从 results/ 原始 CSV 行独立重算并逐项比对",
+  "provenance": {
+    "quickdraw_s5": "results/full_threearm.csv（S5-full-protocol，判读 73fb33f2）",
+    "quickdraw_e2": "results/e2_btrain.csv（S7-e2-btrain-arm，判读 0297fdde）",
+    "quickdraw_lrdecay": "results/quickdraw_lrdecay.csv（S11-quickdraw-lrdecay-retrain，判读 1e6b6e8）",
+    "nmnist_s10": "results/nmnist_threearm.csv（S10-nmnist-threearm-baseline，判读 eaea7487）",
+    "nmnist_probes": "results/nm_negative_probes.csv（S10-redesign 两探针，判读 ba71e86e）",
+    "dt_spectrum": "results/nm_dt_response_spectrum.json（S10-redesign 次探针）",
+    "d7": "results/d7_fidelity_analysis.json（S9-fidelity-gap 判读落账）"
+  },
+  "paper_anchors": {
+    "citation": "arXiv:2605.27467 (JCSSE 2026), Tables I/III; 论文自带训练日志 experiments/_repo/lln_10.log 与 lln_nmnist_10.log 双源一致",
+    "tableI_quickdraw_lnn_test": 0.9577,
+    "tableIII_quickdraw_lnn": {"mask_0pct": 92.69, "mask_30pct": 68.80, "mask_50pct": 41.47, "mask_70pct": 22.48},
+    "tableI_nmnist_lnn_test": 0.9938,
+    "tableIII_nmnist_lnn_0pct": 98.71,
+    "tableIII_nmnist_lstm_0pct": 98.63
+  },
+  "quickdraw_s5": {
+    "conditions": {
+      "clean": {"A": [92.30, 0.86], "B": [92.30, 0.86], "C": [92.89, 0.17], "B_minus_A": 0.00, "C_minus_A": 0.59},
+      "uniform30": {"A": [63.93, 2.86], "B": [64.37, 3.76], "C": [86.10, 0.80], "B_minus_A": 0.44, "C_minus_A": 22.17},
+      "block5-30": {"A": [71.03, 4.10], "B": [69.81, 4.69], "C": [88.52, 0.66], "B_minus_A": -1.22, "C_minus_A": 17.49},
+      "block15-30": {"A": [72.83, 2.80], "B": [72.03, 3.22], "C": [83.55, 1.08], "B_minus_A": -0.80, "C_minus_A": 10.72}
+    },
+    "per_seed_block5_30": {"B_minus_A": [-1.73, -2.42, 0.50], "C_minus_A": [22.41, 15.06, 14.99]},
+    "per_seed_clean_C_minus_A": [1.82, -0.37, 0.31],
+    "a_clean_three_calibers": {"meanpool": 92.30, "final": 9.73, "gapnb": 92.30},
+    "uniform30_z_vs_chance": 155.68,
+    "n_eval": 7500
+  },
+  "nmnist_s10": {
+    "conditions": {
+      "clean": {"A": [98.12, 0.20], "B": [98.12, 0.20], "C": [98.78, 0.04], "B_minus_A": 0.00, "C_minus_A": 0.67},
+      "uniform30": {"A": [90.06, 4.26], "B": [90.13, 3.71], "C": [97.85, 0.27], "B_minus_A": 0.07, "C_minus_A": 7.79},
+      "block5-30": {"A": [80.99, 4.76], "B": [81.08, 4.47], "C": [90.45, 1.37], "B_minus_A": 0.09, "C_minus_A": 9.47},
+      "block15-30_degenerate": {"A": [71.34, 1.83], "B": [71.34, 1.83], "C": [71.44, 1.94], "B_minus_A": 0.00, "C_minus_A": 0.10}
+    },
+    "per_seed_block5_30": {"B_minus_A": [0.53, 0.04, -0.29], "C_minus_A": [16.38, 6.79, 5.23]},
+    "per_seed_clean_C_minus_A": [0.95, 0.43, 0.62],
+    "a_clean_three_calibers": {"meanpool": 98.12, "final": 53.04, "gapnb": 98.12},
+    "uniform30_z_vs_chance": 266.86,
+    "n_eval": 10000
+  },
+  "quickdraw_e2": {
+    "conditions": {
+      "clean": {"A": [92.30, 0.86], "D": [92.54, 1.02], "D_minus_A": 0.24, "D_minus_C": -0.34},
+      "uniform30": {"D": [84.41, 1.15], "D_minus_A": 20.48, "D_minus_C": -1.69},
+      "block5-30": {"A": [71.03, 4.10], "D": [86.33, 2.35], "D_minus_A": 15.31, "D_minus_C": -2.18},
+      "block15-30": {"D_minus_A": 7.96, "D_minus_C": -2.75}
+    },
+    "per_seed_block5_30_D_minus_A": [21.85, 9.69, 14.38],
+    "per_seed_clean_D_minus_A": [1.94, -1.92, 0.71],
+    "attribution_ratio_D_minus_A_over_C_minus_A": 0.8752,
+    "note": "C 臂取 S5 结论级锚点 C−A(block5-30)=+17.49pp；D−C 由 e2_btrain.csv 的 C 行与 D 行配对重算"
+  },
+  "quickdraw_lrdecay_s11": {
+    "conditions": {
+      "clean": {"A": [93.20, 0.09], "B": [93.20, 0.09], "B_minus_A": 0.00},
+      "uniform30": {"A": [64.81, 2.48], "B": [65.09, 3.39], "B_minus_A": 0.28},
+      "block5-30": {"A": [73.36, 2.20], "B": [71.87, 3.00], "B_minus_A": -1.49},
+      "block15-30": {"A": [75.47, 2.15], "B": [73.93, 2.28], "B_minus_A": -1.55}
+    },
+    "a_clean_gain_vs_s5_pp": 0.90,
+    "per_seed_a_clean_gain_vs_s5_pp": [1.99, 0.20, 0.52],
+    "s5_baseline_a_clean": [92.30, 0.86],
+    "a_clean_three_calibers": {"meanpool": 93.20, "final": 10.22, "gapnb": 93.20},
+    "uniform30_z_vs_chance": 158.23,
+    "d7_gap_vs_tableI_pp": -2.57,
+    "d7_gap_vs_tableIII_0pct_pp": 0.51,
+    "n_eval": 7500
+  },
+  "nmnist_probes": {
+    "C_no_dt_minus_A_block5_30_pp": 9.58,
+    "per_seed_C_no_dt_minus_A_pp": [16.49, 6.85, 5.41],
+    "per_seed_note": "seed2 真值 5.405 跨 rounding 边界（判读单元独立复算 5.40 / MD 表 5.41），容差 0.02pp 覆盖，不影响 mean 判据",
+    "dt_net_effect_C_minus_C_no_dt_pp": -0.11,
+    "clean_switch_diff_pp": 0.0000,
+    "three_caliber_summary_block5_30": {"C_dt": [90.45, 1.37], "C_no_dt": [90.57, 1.33], "A_ref": [80.99, 4.76]},
+    "identity_vs_s10_max_abs_diff": {"A_ref_vs_A": 0.000044, "C_dt_vs_C": 0.000033}
+  },
+  "dt_spectrum": {
+    "block5-30": {"R_max": 0.19926, "dt_star": 20, "R": {"2": 0.073098, "5": 0.148303, "10": 0.181729, "20": 0.19926}},
+    "uniform30": {"R_max": 0.198682, "dt_star": 20},
+    "clean": {"R_max": 0.185449, "dt_star": 20}
+  },
+  "d7_gaps": {
+    "quickdraw_s5": {"a_clean": 92.30, "vs_tableI_pp": -3.47, "vs_tableIII_0pct_pp": -0.39, "phantom_from_citation_error_pp": 2.83},
+    "quickdraw_after_s11": {"a_clean": 93.20, "vs_tableI_pp": -2.57, "vs_tableIII_0pct_pp": 0.51},
+    "nmnist_s10": {"a_clean": 98.12, "vs_tableI_pp": -1.26, "vs_tableIII_0pct_pp": -0.59}
+  },
+  "gates_pre_registered": {
+    "source": "课题 PROJECT.md / design.md 预注册门线（跑前冻结，禁事后改）",
+    "H1_pass_pp": 2.0,
+    "H1_clean_degradation_tol_pp": 0.5,
+    "H1_falsify_pp": 1.0,
+    "clean_identity_tol_pp": 0.1,
+    "uniform30_z_min": 2.0,
+    "caliber_differentiation_min_pp": 5.0,
+    "probe_training_dominant_pp": 5.0,
+    "dt_star_min": 5,
+    "probes_identity_tol": 0.0005
+  }
+}

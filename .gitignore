@@ -1,0 +1,13 @@
+# 数据与权重（体积大/可重新获取，不入库；重建命令见 REPRODUCE.md）
+data/
+code/ckpt/
+code/__pycache__/
+__pycache__/
+*.pt
+*.pth
+*.npy
+*.f32.npy
+*.zip
+*.log
+*.tmp
+.venv/

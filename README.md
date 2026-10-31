@@ -5,6 +5,9 @@
 > 都没有提升测试精度（QuickDraw −1.22pp、N-MNIST +0.09pp，预注册证伪线 +1pp）。
 > 论文宣称的抗丢帧优势，主要不来自推理期的时间机制。
 
+> 仓库地址：https://github.com/3gediana/lnn-cfc-gap-conditioning-negative-result
+> 主课题仓（完整研究过程：判读/复盘/协议取证）：https://github.com/3gediana/lnn-cfc-gap-conditioning
+
 - 复现入口（一条命令，纯标准库、无需 GPU/数据/下载，秒级）：
   ```bash
   python stress_gap_test.py
